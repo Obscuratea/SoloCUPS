@@ -1,0 +1,24 @@
+# Maintainer: obscura
+# Lives in packaging/ so makepkg's src/ and pkg/ scratch folders stay out of the project.
+pkgname=solocups
+pkgver=2.0.0
+pkgrel=3
+pkgdesc='Simple, zero-headache printer manager for CUPS'
+arch=('any')
+license=('MIT')
+depends=('python' 'python-pyqt6' 'cups' 'polkit')
+optdepends=(
+            'avahi: find Wi-Fi printers'
+            'nss-mdns: find Wi-Fi printers'
+            'ipp-usb: driverless USB printers')
+provides=('solocup')
+conflicts=('solocup')
+replaces=('solocup')
+source=()
+
+package() {
+  cd "$startdir/.."
+  install -Dm755 solocups.py "$pkgdir/usr/bin/solocups"
+  install -Dm644 packaging/solocups.desktop "$pkgdir/usr/share/applications/solocups.desktop"
+  install -Dm644 icons/solocups.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/solocups.svg"
+}

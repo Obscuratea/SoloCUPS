@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=SoloCUPS
+GenericName=Printer Manager
+Comment=Simple, zero-headache printer manager for CUPS
+Exec=solocups
+Icon=solocups
+Categories=Settings;HardwareSettings;Printing;
+Keywords=printer;cups;print;queue;solocup;solocups;
+StartupWMClass=solocups
+Terminal=false
